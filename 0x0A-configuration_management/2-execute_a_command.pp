@@ -1,5 +1,6 @@
-# Kills a process named killmenow
+# This manifest kills a process named killmenow using pkill
 
-exec { 'pkill -f killmenow':
-  path => '/usr/bin/:/usr/local/bin/:/bin/'
+exec { 'kill_killmenow':
+  command => '/usr/bin/pkill killmenow',
+  onlyif  => '/usr/bin/pgrep killmenow',
 }

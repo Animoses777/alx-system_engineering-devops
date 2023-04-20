@@ -1,1 +1,1 @@
-My shell I/O redirection and filters
+shell redirection
