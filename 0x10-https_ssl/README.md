@@ -1,51 +1,32 @@
-0x10. HTTPS SSL
+# 0x10. HTTPS SSL 
 
-0. World wide web
-mandatory
-Configure your domain zone so that the subdomain www points to your load-balancer IP (lb-01). Let’s also add other subdomains to make our life easier, and write a Bash script that will display information about subdomains.
+<p align="center">
+  <img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/276/FlhGPEK.png"/>
+</p>
 
-Requirements:
+## Resource
 
-Add the subdomain www to your domain, point it to your lb-01 IP (your domain name might be configured with default subdomains, feel free to remove them)
-Add the subdomain lb-01 to your domain, point it to your lb-01 IP
-Add the subdomain web-01 to your domain, point it to your web-01 IP
-Add the subdomain web-02 to your domain, point it to your web-02 IP
-Your Bash script must accept 2 arguments:
-domain:
-type: string
-what: domain name to audit
-mandatory: yes
-subdomain:
-type: string
-what: specific subdomain to audit
-mandatory: no
-Output: The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]
-When only the parameter domain is provided, display information for its subdomains www, lb-01, web-01 and web-02 - in this specific order
-When passing domain and subdomain parameters, display information for the specified subdomain
-Ignore shellcheck case SC2086
-Must use:
-awk
-at least one Bash function
-You do not need to handle edge cases such as:
-Empty parameters
-Nonexistent domain names
-Nonexistent subdomains
+- [What is HTTPS?](https://www.instantssl.com/http-vs-https)
+- [What are the 2 main elements that SSL is providing](https://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html)
+- [HAProxy SSL termination on Ubuntu16.04](https://devops.ionos.com/tutorials/install-and-configure-haproxy-load-balancer-on-ubuntu-1604/)
+- [SSL termination](https://en.wikipedia.org/wiki/TLS_termination_proxy)
+- [Bash function](https://tldp.org/LDP/abs/html/complexfunct.html)
+- [How to Secure HAProxy with Let's Encrypt on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04)
+- [HAProxy SSL Termination](https://www.haproxy.com/blog/haproxy-ssl-termination/)
 
-1. HAproxy SSL termination
-mandatory
-“Terminating SSL on HAproxy” means that HAproxy is configured to handle encrypted traffic, unencrypt it and pass it on to its destination.
+## Tasks
 
-Create a certificate using certbot and configure HAproxy to accept encrypted traffic for your subdomain www..
+<details>
+<summary><a href="./0-world_wide_web">0. World wide web</a></summary><br>
+<a href='https://postimg.cc/w3QxtHzN' target='_blank'><img src='https://i.postimg.cc/Y2Jvsqyd/image.png' border='0' alt='image'/></a>
+</details>
 
-Requirements:
+<details>
+<summary><a href="./1-haproxy_ssl_termination">1. HAproxy SSL termination</a></summary><br>
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/jSy72SG2/image.png' border='0' alt='image'/></a>
+</details>
 
-HAproxy must be listening on port TCP 443
-HAproxy must be accepting SSL traffic
-HAproxy must serve encrypted traffic that will return the / of your web server
-When querying the root of your domain name, the page returned must contain Holberton School
-Share your HAproxy config as an answer file (/etc/haproxy/haproxy.cfg)
-The file 1-haproxy_ssl_termination must be your HAproxy configuration file
-
-Make sure to install HAproxy 1.5 or higher, SSL termination is not available before v1.5.
-
-
+<details>
+<summary><a href="./100-redirect_http_to_https">2. No loophole in your website traffic</a></summary><br>
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/Njtg78N1/image.png' border='0' alt='image'/></a>
+</details>
