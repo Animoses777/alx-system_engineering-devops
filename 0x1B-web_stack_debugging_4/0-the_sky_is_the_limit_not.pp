@@ -1,4 +1,4 @@
-# This is a manuscript thet increases the amount of traffic an Nginx server can handle
+# This manuscript increases the amount of traffic an Nginx server can handle
 
 exec { 'ngix-conf':
   command => 'sed -i "s/15/4096/" /etc/default/nginx',
